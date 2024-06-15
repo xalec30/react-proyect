@@ -25,7 +25,7 @@ export default function Navbar(props){
                     <div className="navbar-menu">
                         <div className="navbar-start">
                             <Link className="navbar-item has-text-weight-medium" to={"/"}>Inicio</Link>
-                            <Link className="navbar-item has-text-weight-medium" to={"/about"}>Acerca de </Link>
+                            <Link className="navbar-item has-text-weight-medium" to={"/about"}>Acerca de Proyecto</Link>
                         </div>
                     </div>
                     <div className="navbar-end">
@@ -43,7 +43,7 @@ export default function Navbar(props){
                     <div className="navbar-menu">
                         <div className="navbar-start">
                             <Link className="navbar-item has-text-weight-medium" to={"/"}>Inicio</Link>
-                            <Link className="navbar-item has-text-weight-medium" to={"/about"}>Acerca de </Link>
+                            <Link className="navbar-item has-text-weight-medium" to={"/about"}>Acerca del poryecto</Link>
                         </div>
                     </div>
                     {
