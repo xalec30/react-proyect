@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import codeigniter from "../utils/axios";
+import { useAuth } from "../provider/AuthProvider";
 
 export default function FormLoginContent(){
 
     const [error,setError] = useState();
     const navigate = useNavigate();
+    const Auth = useAuth();
 
     const AuthLoginUser = async() => {
         let username = document.getElementById('username').value;
@@ -29,13 +31,19 @@ export default function FormLoginContent(){
         }).then((response) => {
             localStorage.setItem('token',1);
             localStorage.setItem('user',JSON.stringify(response.data.user_data));
+            Auth.login();
             navigate("/dashboard/overview");
             return;
         }).catch(function (error) {
-            let errors = error.response.data.messages;
+
+            if(error.response){
+                let errors = error.response.data.messages;
         
-            setError(Object.values(errors)[0]);
-            OpenNotification();
+                setError(Object.values(errors)[0]);
+                OpenNotification();
+            }
+
+           
         })
     }
 

@@ -15,8 +15,7 @@ export default function Navbar(props){
     }
 
     function logout(){
-        localStorage.removeItem("token");
-        localStorage.removeItem('user');
+        Auth.logout();
         navigate('/account/login');
     }
 
