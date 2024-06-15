@@ -66,7 +66,11 @@ export default function Navbar(props){
                             <div className="navbar-end">
                                 <div className="navbar-item">
                                     <div className="buttons">
-                                        <Link className="button is-link is-white" to={'/dashboard/overview'}><strong>Panel del usuario</strong></Link>
+                                        {
+                                            (props.isButtonDashboard) ? (
+                                                <Link className="button is-link is-white" to={'/dashboard/overview'}><strong>Panel del usuario</strong></Link>
+                                            ) : ''
+                                        }
                                         <button className="button" onClick={() => logout()}>Cerrar Sesion</button>
                                     </div>
                                     </div>

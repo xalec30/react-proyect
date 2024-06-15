@@ -7,7 +7,7 @@ export default function Home(){
 
     return(
         <>
-            <Navbar/>
+            <Navbar isButtonDashboard="true" />
             <div className="columns">
                 <Menu/>
                 <MainContent />

@@ -3,7 +3,7 @@ export default function Profile(){
         <main className="column is-four-fifths has-background-light pb-4">
             <div className="column is-6">
                 <div className="tags are-large">
-                    <span className="tag">Recursos</span>
+                    <span className="tag">Perfil</span>
                 </div>
             </div>
         </main>

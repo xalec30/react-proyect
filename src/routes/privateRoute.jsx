@@ -13,7 +13,7 @@ const PrivateRoute = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar isButtonDashboard="" />
                 <div className="columns" style={{height:'100vh'}}>
                     <NavAccount/>
                     <Outlet />

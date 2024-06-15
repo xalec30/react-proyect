@@ -54,21 +54,29 @@ export default function Users(){
                         </tr>
                     </thead>
                     <tbody>
-                       
-                            {users.map((user) => {
+                        {
+                            (!users) ? 
 
-                                if(user.id != auth.id){
+                                users.map((user) => {
 
-                                    return(
-                                        <tr key={user.id} id={'user_' + user.id}>
-                                            <th>{user.username}</th>
-                                            <td>{user.name + ' ' + user.last_name}</td>
-                                            <td>{user.email}</td>
-                                            <td><button onClick={() => deleteUser(user.id)} className="button is-danger">Eliminar</button></td>
-                                        </tr>
-                                    )
-                                }   
-                            })}
+                                    if(user.id != auth.id){
+
+                                        return(
+                                            <tr key={user.id} id={'user_' + user.id}>
+                                                <th>{user.username}</th>
+                                                <td>{user.name + ' ' + user.last_name}</td>
+                                                <td>{user.email}</td>
+                                                <td><button onClick={() => deleteUser(user.id)} className="button is-danger">Eliminar</button></td>
+                                            </tr>
+                                        )
+                                    }   
+                                })
+                            : (
+                                <tr>
+                                    <td colspan="4" className="has-text-centered">No existen usuarios registrados</td>
+                                </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
