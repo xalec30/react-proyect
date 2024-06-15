@@ -5,13 +5,15 @@ import codeigniter from "../utils/axios";
 export default function FormRegisterContent(){
 
     const [error,setError] = useState('');
+    const [success,setSuccess] = useState('Usuario Registrado');
     const navigate = useNavigate();
 
-    const RegisterUser = () => {
+    const RegisterUser = async() => {
        
         let username = document.getElementById('username').value;
         let password = document.getElementById('current_password').value;
         let name = document.getElementById('name').value;
+        let middle_name = document.getElementById('middle_name').value;
         let last_name = document.getElementById('last_name').value;
         let email = document.getElementById('email').value;
        
@@ -45,20 +47,35 @@ export default function FormRegisterContent(){
             return;
         }
 
-        codeigniter.post('/users',{
+        CloseNotification();
+
+        await codeigniter.post('/users',{
             'username': username,
             'name': name,
+            'middle_name': middle_name,
             'last_name': last_name,
             'email': email,
             'password': password
         }).then((response) => {
-            console.log(response);
+            document.getElementById('notice-success').classList.remove('is-hidden');
+            setTimeout(() => {
+                navigate("/account/login");
+            },2000);
             return;
         }).catch(function (error) {
-            let errors = error.response.data.messages;
-        
-            setError(Object.values(errors)[0]);
-            OpenNotification();
+
+            if(error.response){
+
+                let errors = error.response.data.messages;
+                let message = Object.values(errors)[0];
+                if(Object.values(errors)[0] == 'The email field must contain a valid email address.'){
+    
+                    message = "Correo Electronico no valido";
+                }
+    
+                setError(message);
+                OpenNotification();
+            }
         })
     }
 
@@ -72,43 +89,52 @@ export default function FormRegisterContent(){
 
     return(
         <div className="container mt-4">
-            <div className="columns" style={{justifyContent:"center"}}>
+            <div className="columns" style={{justifyContent:"center",paddingBottom:'100px'}}>
                 <div className="column is-6">
                     <section className="mt-4 p-3" style={{height:"700px"}}>
-                        <h2 className="title">Registrarse</h2>
+                        <h2 className="title has-text-centered">Registrarse</h2>
                         <div className="notification is-danger is-light is-hidden">
                             <button className="delete" onClick={() => CloseNotification()}></button>
                             {error}
                         </div>
+                        <div id='notice-success' className="notification is-success is-light is-hidden">
+                            {success}
+                        </div>
                         <div className="field mt-4">
-                            <label className="label">Usuario</label>
+                            <label className="label">Usuario <span className="has-text-danger">*</span></label>
                             <div className="control">
                                 <input className="input" id="username" type="text" placeholder="" />
                             </div>
                         </div>
                         <div className="field mt-4">
-                            <label className="label">Nombre</label>
+                            <label className="label">Nombre <span className="has-text-danger">*</span></label>
                             <div className="control">
                                 <input className="input" id="name" type="text" placeholder="" />
                             </div>
                         </div>
                         <div className="field mt-4">
-                            <label className="label">Apellido</label>
+                            <label className="label">Segundo Nombre </label>
+                            <div className="control">
+                                <input className="input" id="middle_name" type="text" placeholder="" />
+                            </div>
+                        </div>
+                        <div className="field mt-4">
+                            <label className="label">Apellido <span className="has-text-danger">*</span></label>
                             <div className="control">
                                 <input className="input" id="last_name" type="text" placeholder="" />
                             </div>
                         </div>
                         <div className="field mt-4">
-                            <label className="label">Correo Electronico</label>
+                            <label className="label">Correo Electronico <span className="has-text-danger">*</span></label>
                             <div className="control">
                                 <input className="input" id="email" type="email" placeholder="" />
                             </div>
                         </div>
 
                         <div className="field mt-4">
-                            <label className="label">Contraseña</label>
+                            <label className="label">Contraseña <span className="has-text-danger">*</span></label>
                             <div className="control">
-                                <input className="input" id="current_password" type="text" placeholder="" />
+                                <input className="input" id="current_password" type="password" placeholder="" />
                             </div>
                         </div>
                         

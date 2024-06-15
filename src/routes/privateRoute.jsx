@@ -1,5 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from '../provider/AuthProvider';
+import Navbar from "../components/Nav";
+import FooterContent from "../components/footer";
+import NavAccount from "../components/NavAccount";
 
 const PrivateRoute = () => {
     const user = useAuth();
@@ -8,7 +11,16 @@ const PrivateRoute = () => {
         return <Navigate to="/account/login" />;
     }
 
-    return <Outlet />;
+    return (
+        <>
+            <Navbar/>
+                <div className="columns" style={{height:'100vh'}}>
+                    <NavAccount/>
+                    <Outlet />
+                </div>
+            <FooterContent/>
+        </>
+    );  
 
 };
 

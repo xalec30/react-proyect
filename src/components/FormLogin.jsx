@@ -7,7 +7,7 @@ export default function FormLoginContent(){
     const [error,setError] = useState();
     const navigate = useNavigate();
 
-    const AuthLoginUser = () => {
+    const AuthLoginUser = async() => {
         let username = document.getElementById('username').value;
         let password = document.getElementById('user-password').value;
         
@@ -23,7 +23,7 @@ export default function FormLoginContent(){
             return;
         }
 
-        codeigniter.post('/auth',{
+        await codeigniter.post('/auth',{
             'username': username,
             'password': password
         }).then((response) => {
@@ -52,7 +52,7 @@ export default function FormLoginContent(){
             <div className="columns" style={{justifyContent:"center"}}>
                 <div className="column is-6">
                     <section className="mt-4 p-3" style={{height:"550px"}}>
-                        <h2 className="title">Iniciar Sesion</h2>
+                        <h2 className="title has-text-centered">Iniciar Sesion</h2>
                         <div className="notification is-danger is-light is-hidden">
                             <button className="delete" onClick={() => CloseNotification()}></button>
                             {error}

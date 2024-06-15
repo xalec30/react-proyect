@@ -1,11 +1,11 @@
 
-export default function OverviewDashboard(){
+export default function Resources(){
 
-    return (
+    return(
         <main className="column is-four-fifths has-background-light pb-4">
             <div className="column is-6">
                 <div className="tags are-large">
-                    <span className="tag">Pagina Principal</span>
+                    <span className="tag">Recursos</span>
                 </div>
             </div>
         </main>

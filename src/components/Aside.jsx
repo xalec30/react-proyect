@@ -8,17 +8,17 @@ export default function Menu(){
              <div className="p-3">
                 <p className="pb-2 has-text-centered">Categorias</p>
                 <ul className="menu-list">
-                    <ItemMenu name="3D" isActive="1" />
-                    <ItemMenu name="Blogs" isActive="0" />
-                    <ItemMenu name="Colores" isActive="0" />
-                    <ItemMenu name="Componentes" isActive="0" />
-                    <ItemMenu name="Fondos" isActive="0" />
-                    <ItemMenu name="Ilustraciones" isActive="0" />
-                    <ItemMenu name="Librerias" isActive="0" />
-                    <ItemMenu name="Fotografias" isActive="0" />
-                    <ItemMenu name="Tipografias" isActive="0" />
-                    <ItemMenu name="Videos" isActive="0" />
-                    <ItemMenu name="Herramientas" isActive="0" />
+                    <ItemMenu name="3D" href="/3D" />
+                    <ItemMenu name="Blogs" href="/Blogs" />
+                    <ItemMenu name="Colores" href="/Colours" />
+                    <ItemMenu name="Componentes" href="/Components" />
+                    <ItemMenu name="Fondos" href="/Backgrounds" />
+                    <ItemMenu name="Ilustraciones" href="/Illustrator" />
+                    <ItemMenu name="Librerias" href="/Library" />
+                    <ItemMenu name="Fotografias" href="Photos" />
+                    <ItemMenu name="Tipografias" href="/Tipography" />
+                    <ItemMenu name="Videos" href="videos" />
+                    <ItemMenu name="Herramientas" href="tools" />
                 </ul>
              </div>
         </aside>

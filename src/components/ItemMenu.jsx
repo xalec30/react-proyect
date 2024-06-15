@@ -1,19 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 export default function ItemMenu(props){
-
-    const setIsActive = () => {
-
-        if(props.isActive == 1){
-            return 'category has-text-weight-medium is-active';
-        }
-
-        return 'category has-text-weight-medium';
-    }
-
-    let classes = setIsActive();
 
     return(
         <li>
-            <a className={classes} href="">{ props.name }</a>
+            <NavLink className={({ isActive }) => { return isActive ? 'category has-text-weight-medium is-active' : 'category has-text-weight-medium'}} to={props.href}>{ props.name }</NavLink>
         </li>
     ) 
 }
