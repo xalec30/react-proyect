@@ -2,7 +2,6 @@ import codeigniter from "../utils/axios"
 import { useState, useEffect } from "react";
 import { useAuth } from "../provider/AuthProvider";
 
-
 export default function Users(){
     const [users,setUsers] = useState([]); 
     const data = useAuth();
@@ -41,7 +40,7 @@ export default function Users(){
                 </div>
             </div>
             <div className="column is-12">
-                <div id="notificationDelete" class="notification is-danger is-hidden">Usuario Eliminado</div>
+                <div id="notificationDelete" className="notification is-danger is-hidden">Usuario Eliminado</div>
             </div>
             <div className="column is-12">
                 <table className="table is-fullwidth">
@@ -73,7 +72,7 @@ export default function Users(){
                                 })
                             : (
                                 <tr>
-                                    <td colspan="4" className="has-text-centered">No existen usuarios registrados</td>
+                                    <td colSpan="4" className="has-text-centered">No existen usuarios registrados.</td>
                                 </tr>
                             )
                         }

@@ -12,7 +12,7 @@ export default function NavAccount(props){
     return(
         <aside className="column is-one-fifth menu p-3">
              <div className="p-3">
-                <p className="pb-2 has-text-centered">{data.name + ' ' + data.last_name}</p>
+                <p className="pb-2 has-text-centered"><strong>{data.name + ' ' + data.last_name}</strong></p>
                 <ul className="menu-list">
                     <ItemMenu name="Pagina Principal" href="/dashboard/overview"/>
                     {

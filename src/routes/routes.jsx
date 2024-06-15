@@ -37,10 +37,6 @@ const Router =  createBrowserRouter([
                 'element': <OverviewDashboard />,
             },
             {
-                'path': 'profile',
-                'element': 'hola'
-            },
-            {
                 'path': 'resources',
                 'element': <Resources/>
             },

@@ -24,7 +24,7 @@ export default function Navbar(props){
             <>
                 <nav className="navbar border-bottom">
                     <div className="navbar-brand">
-                        <Link className="navbar-item" to={'/'}>TecnoHub</Link>
+                        <Link className="navbar-item" to={"/"}>TecnoHub</Link>
                         <a role="button" onClick={() => toggleBurguer()} id="navbar-burguer" className="navbar-burger" aria-label="menu" data-target="navbarmenu" aria-expanded="false">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -48,7 +48,7 @@ export default function Navbar(props){
             <>
                 <nav className="navbar border-bottom">
                     <div className="navbar-brand">
-                        <Link className="navbar-item" href="/">TecnoHub</Link>
+                        <Link className="navbar-item" to={"/"}>TecnoHub</Link>
                         <a role="button" className="navbar-burger" onClick={() => toggleBurguer()} id="navbar-burguer" aria-label="menu" data-target="navbarmenu" aria-expanded="false">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
