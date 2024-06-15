@@ -72,6 +72,8 @@ export default function Profile(){
             'password': password
         }).then((response) => {
             setSuccess('Datos Actualizados');
+            Auth.setUser(JSON.stringify(response.data.user));
+            localStorage.setItem('user',JSON.stringify(response.data.user));
             document.querySelector('.notification-success').classList.remove('is-hidden');
 
             setTimeout(() => {

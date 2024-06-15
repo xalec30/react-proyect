@@ -8,24 +8,22 @@ export default function Users(){
     
     const auth = JSON.parse(data.user);
 
-    useEffect(() => {
-
-        const getUsers = async() => {
+    const getUsers = async() => {
         
-            await codeigniter.get('/users').then((response) => {
-                setUsers(response.data);
-            })
-        }
+        await codeigniter.get('/users').then((response) => {
+            setUsers(response.data);
+        })
+    }
 
-        getUsers();
+    useEffect(() => {
+         getUsers();
     },[])
 
     const deleteUser = async(id) => {
 
         await codeigniter.delete('/users/' + id).then((response) => {
-            document.getElementById('user_' + id).remove();
             document.getElementById('notificationDelete').classList.remove('is-hidden');
-
+            getUsers();
             setTimeout(() => {
                 document.getElementById('notificationDelete').classList.add('is-hidden');
             },1000);
@@ -54,7 +52,7 @@ export default function Users(){
                     </thead>
                     <tbody>
                         {
-                            (!users) ? 
+                            (users) ? 
 
                                 users.map((user) => {
 
