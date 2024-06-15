@@ -15,7 +15,53 @@ import Profile from "../pages/profile";
 const Router =  createBrowserRouter([
     {
         'path': '/',
-        'element': <Home/>
+        'element': <Home/>,
+        'children' : [
+            {
+                'path': '/3D',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Blogs',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Colours',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Components',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Backgrounds',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Illustrator',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Videos',
+                'element': <Home/>,
+            },
+            {
+                'path': '/tools',
+                'element': <Home/>,
+            },
+            {
+                'path': '/tipography',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Photos',
+                'element': <Home/>,
+            },
+            {
+                'path': '/Library',
+                'element': <Home/>,
+            },
+        ]
     },
     {
         'path': '/account/register',
