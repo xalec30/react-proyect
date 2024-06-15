@@ -9,9 +9,6 @@ const codeigniter = axios.create({
         'Access-Control-Allow-Headers': "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method",
         'Access-Control-Allow-Methods' :'GET, POST PUT, DELETE',
     },
-    httpsAgent: new https.Agent({  
-        rejectUnauthorized: false
-    })
 });
 
 export default codeigniter;
