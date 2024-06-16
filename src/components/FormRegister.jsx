@@ -139,6 +139,7 @@ export default function FormRegisterContent(){
                         </div>
                         
                         <button className="button is-link is-fullwidth" onClick={() => RegisterUser()}>Registrarse</button>
+                        <p className="has-text-centered pt-2 pb-2">O</p>
                         <Link className="button  is-fullwidth mt-4" to={'/account/login'}>Iniciar Sesion</Link>
                     </section>
                 </div>

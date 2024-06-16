@@ -88,6 +88,7 @@ export default function FormLoginContent(){
                             </div>  
                         </form>
                         <button className="button is-link is-fullwidth mt-4" onClick={() => AuthLoginUser()}>Iniciar Sesion</button>
+                        <p className="has-text-centered pt-2 pb-2">O</p>
                         <Link className="button  is-fullwidth mt-4" to={ '/account/register' }>Registrarse</Link>
                     </section>
                 </div>

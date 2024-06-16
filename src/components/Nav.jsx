@@ -65,6 +65,7 @@ export default function Navbar(props){
                             (Auth.token) ? 
                             <div className="navbar-end">
                                 <div className="navbar-item">
+                                    <input class="input input-search mr-3" placeholder="Que desea encontrar?" type="text" id="search"></input>
                                     <div className="buttons">
                                         {
                                             (props.isButtonDashboard) ? (
@@ -78,6 +79,7 @@ export default function Navbar(props){
                             :
 
                             <div className="navbar-end">
+                                <input class="input input-search mr-3 mt-2" style={{minWidth:'100%'}} placeholder="Que desea encontrar?" type="text" id="search" />
                                 <div className="navbar-item">
                                     <div className="buttons">
                                         <Link className="button is-white" to={'/account/login'}><strong>Iniciar Sesion</strong></Link>
