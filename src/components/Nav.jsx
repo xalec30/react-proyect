@@ -63,9 +63,15 @@ export default function Navbar(props){
                         </div>
                         {
                             (Auth.token) ? 
+                                
                             <div className="navbar-end">
+                                {
+                                        (props.isButtonDashboard) ? (
+                                        <input className="input input-search mr-3 mt-2" style={{width:'100%'}} placeholder="Que desea encontrar?" type="text" id="search"></input>
+                                    ) : ''
+                                }
                                 <div className="navbar-item">
-                                    <input className="input input-search mr-3" placeholder="Que desea encontrar?" type="text" id="search"></input>
+                                    
                                     <div className="buttons">
                                         {
                                             (props.isButtonDashboard) ? (
