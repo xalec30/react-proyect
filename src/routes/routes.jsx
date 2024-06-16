@@ -12,6 +12,19 @@ import Users from '../pages/users';
 import Roles from '../pages/Roles';
 import Profile from "../pages/profile";
 
+import Third from "../pages/3d";
+import Blogs from "../pages/blogs";
+import Colours from "../pages/colours";
+import Components from '../pages/components';
+import Backgrounds from "../pages/background";
+import Illustrator from "../pages/illustrator";
+import Videos from '../pages/videos';
+import Tools from '../pages/tools';
+import Tipography from "../pages/tipography";
+import Photos from "../pages/photos";
+import Library from "../pages/library";
+
+
 const Router =  createBrowserRouter([
     {
         'path': '/',
@@ -19,47 +32,47 @@ const Router =  createBrowserRouter([
         'children' : [
             {
                 'path': '/3D',
-                'element': <Home/>,
+                'element': <Third/>,
             },
             {
                 'path': '/Blogs',
-                'element': <Home/>,
+                'element': <Blogs/>,
             },
             {
                 'path': '/Colours',
-                'element': <Home/>,
+                'element': <Colours/>,
             },
             {
                 'path': '/Components',
-                'element': <Home/>,
+                'element': <Components/>,
             },
             {
                 'path': '/Backgrounds',
-                'element': <Home/>,
+                'element': <Backgrounds/>,
             },
             {
                 'path': '/Illustrator',
-                'element': <Home/>,
+                'element': <Illustrator/>,
             },
             {
                 'path': '/Videos',
-                'element': <Home/>,
+                'element': <Videos/>,
             },
             {
                 'path': '/tools',
-                'element': <Home/>,
+                'element': <Tools/>,
             },
             {
                 'path': '/tipography',
-                'element': <Home/>,
+                'element': <Tipography/>,
             },
             {
                 'path': '/Photos',
-                'element': <Home/>,
+                'element': <Photos/>,
             },
             {
                 'path': '/Library',
-                'element': <Home/>,
+                'element': <Library/>,
             },
         ]
     },

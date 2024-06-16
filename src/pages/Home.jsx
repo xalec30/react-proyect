@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 import Navbar from "../components/Nav";
 import Menu from "../components/Aside";
 import FooterContent from "../components/footer";
@@ -10,7 +12,9 @@ export default function Home(){
             <Navbar isButtonDashboard="true" />
             <div className="columns">
                 <Menu/>
-                <MainContent />
+                <MainContent>
+                    <Outlet />
+                </MainContent>
             </div>
             <FooterContent/>
         </>
