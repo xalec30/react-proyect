@@ -65,7 +65,7 @@ export default function Navbar(props){
                             (Auth.token) ? 
                             <div className="navbar-end">
                                 <div className="navbar-item">
-                                    <input class="input input-search mr-3" placeholder="Que desea encontrar?" type="text" id="search"></input>
+                                    <input className="input input-search mr-3" placeholder="Que desea encontrar?" type="text" id="search"></input>
                                     <div className="buttons">
                                         {
                                             (props.isButtonDashboard) ? (
