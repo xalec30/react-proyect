@@ -52,7 +52,7 @@ export default function Users(){
                     </thead>
                     <tbody>
                         {
-                            (users) ? 
+                            (users.length > 0) ? 
 
                                 users.map((user) => {
 
