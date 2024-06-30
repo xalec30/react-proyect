@@ -10,18 +10,24 @@ export default function FormLoginContent(){
     const Auth = useAuth();
 
     const AuthLoginUser = async() => {
+
+        document.getElementById('button-submit-login').classList.add('is-loading');
         let username = document.getElementById('username').value;
         let password = document.getElementById('user-password').value;
+
+    
         
         if(username == ""){
             setError('El campo usuario es requerido');
             OpenNotification();
+            document.getElementById('button-submit-login').classList.remove('is-loading');
             return;
         }
 
         if(password == ""){
             setError('El campo contraseña es requerido');
             OpenNotification();
+            document.getElementById('button-submit-login').classList.remove('is-loading');
             return;
         }
 
@@ -41,6 +47,7 @@ export default function FormLoginContent(){
         
                 setError(Object.values(errors)[0]);
                 OpenNotification();
+                document.getElementById('button-submit-login').classList.remove('is-loading');
             }
 
            
@@ -86,8 +93,11 @@ export default function FormLoginContent(){
                                     </label>
                                 </div>
                             </div>  
+                            <div className="field mt-2">
+                                <Link to="/account/lostpassword">¿Olvidaste tu contraseña?</Link>
+                            </div>
                         </form>
-                        <button className="button is-link is-fullwidth mt-4" onClick={() => AuthLoginUser()}>Iniciar Sesion</button>
+                        <button id="button-submit-login" className="button is-link is-fullwidth mt-4" onClick={() => AuthLoginUser()}>Iniciar Sesion</button>
                         <p className="has-text-centered pt-2 pb-2">O</p>
                         <Link className="button  is-fullwidth mt-4" to={ '/account/register' }>Registrarse</Link>
                     </section>

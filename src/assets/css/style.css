@@ -1,3 +1,7 @@
 .border-bottom {
   border-bottom: 1px solid #dfdfdf;
+}
+
+.modal-card-head {
+  box-shadow: none !important;
 }/*# sourceMappingURL=style.css.map */

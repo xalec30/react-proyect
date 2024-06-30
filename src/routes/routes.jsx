@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRoute from "./privateRoute";
+import LoginRoute from './LoginRoute';
 import Home from '../pages/Home';
 import Register from '../pages/Register';
 import Login from "../pages/Login";
@@ -11,6 +12,7 @@ import Tags from "../pages/tags";
 import Users from '../pages/users';
 import Roles from '../pages/Roles';
 import Profile from "../pages/profile";
+import LostPassword from "../pages/lostPassword";
 
 import Third from "../pages/3d";
 import Blogs from "../pages/blogs";
@@ -77,12 +79,22 @@ const Router =  createBrowserRouter([
         ]
     },
     {
-        'path': '/account/register',
-        'element': <Register/>
-    },
-    {
-        'path': '/account/login',
-        'element': <Login/>
+        'path': '/account/',
+        'element': <LoginRoute/>,    
+        'children' : [
+            {
+                'path': 'register',
+                'element': <Register/>
+            },
+            {
+                'path': '/account/login',
+                'element': <Login/>
+            },
+            {
+                'path' : '/account/lostpassword',
+                'element': <LostPassword />
+            },
+        ]
     },
     {
         'path': '/about',
